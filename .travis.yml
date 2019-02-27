@@ -7,4 +7,4 @@ before_install: #define the commands to be executed before running tests
    - docker build -t shruthi/docker-react -f Dockerfile.dev .
 
 script:
-   - docker run shruthi/docker-react npm run test -- -- coverage
+   - docker run shruthi/docker-react npm run test -- --coverage
