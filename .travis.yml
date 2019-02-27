@@ -1,0 +1,10 @@
+sudo: required  #says we require super user permissions
+services:
+   - docker  #to obtain the copy of the docker into our
+             # little container
+
+before_install: #define the commands to be executed before running tests
+   - docker build -t shruthi/docker-react -f Dockerfile.dev .
+
+script:
+   - docker run shruthi/docker-react npm run test -- -- coverage
