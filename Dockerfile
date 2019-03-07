@@ -1,4 +1,4 @@
-From node:alpine as builder
+From node:alpine as buildphase
 
 WORKDIR '/app'
 
@@ -9,5 +9,5 @@ Run npm run build
 
 
 From nginx
-Copy --from=builder /app/build /usr/share/nginx/html
+Copy --from=buildphase /app/build /usr/share/nginx/html
 
